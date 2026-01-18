@@ -131,7 +131,7 @@ export class DatabaseService {
 
       console.log("📤 Uploading audio to Supabase Storage...");
 
-      const { data, error } = await supabase.storage
+      const { error } = await supabase.storage
         .from("audio-recordings")
         .upload(filePath, audioBlob, {
           contentType: "audio/webm",
