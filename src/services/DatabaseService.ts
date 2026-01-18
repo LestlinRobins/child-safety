@@ -203,8 +203,8 @@ export class DatabaseService {
     if (!detection.type) return false;
 
     try {
-      // Record 5 seconds of audio (this also adds a 5-second delay between alerts)
-      console.log("🎤 Starting audio recording...");
+      // Record 5 seconds of audio (provides natural throttling)
+      console.log("🎤 Alert triggered! Starting 5-second audio recording...");
       const audioBlob = await this.recordAudio();
 
       // Upload audio to Supabase Storage

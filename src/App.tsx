@@ -77,9 +77,9 @@ function App() {
     const detection = scorer.detect(features);
     setLastDetection(detection);
 
-    // Save ONLY high-confidence alerts directly (confidence >= 0.80)
+    // Save ONLY high-confidence alerts directly (confidence >= 0.75)
     // Skip detections table - go straight to alerts for significant events only
-    if (saveToDatabase && detection.type && detection.confidence >= 0.8) {
+    if (saveToDatabase && detection.type && detection.confidence >= 0.75) {
       setDbStatus("saving");
       console.log("� High-confidence detection! Saving to alerts:", {
         type: detection.type,
